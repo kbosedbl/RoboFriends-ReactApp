@@ -1,0 +1,17 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;  
+  background: linear-gradient(to right,cyan,pink,red);
+  
+}
+h1{
+	font-family: 'Rock Salt', cursive;
+	font-weight: 200;
+	color: blue;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
