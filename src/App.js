@@ -2,15 +2,27 @@ import React , {Component} from 'react';
 import CardList from './CardList';
 import {robots} from './robots';
 import SearchBox from './SearchBox';
+import './App.css';
+import Scroll from './Scroll';
 
 class App extends Component {
 
 	constructor(){
 		super();
 		this.state = {
-			robots : robots,
+			robots : [],
 			searchField: ''
 		};
+	}
+
+	componentDidMount(){
+		fetch('https://jsonplaceholder.typicode.com/users').
+		then(response=>{
+			return response.json();
+		})
+		.then(users=>{
+			this.setState({ robots:robots });
+		});		
 	}
 
 	onSearchChange =(event) => {
@@ -28,9 +40,12 @@ class App extends Component {
 		console.log(filteredRobots);
 		return (
 				<div className='tc'>					
-					<h1 >RoboFriends</h1>
+					<h1>RoboFriends</h1>
 					<SearchBox searchChange={this.onSearchChange}/>
-					<CardList robots={filteredRobots}/>
+					<br/>
+					<Scroll>
+						<CardList robots={filteredRobots}/>
+					</Scroll>
 
 				</div>
 		);

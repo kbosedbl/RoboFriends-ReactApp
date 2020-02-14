@@ -2,7 +2,7 @@ body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;  
-  background: linear-gradient(to right,cyan,pink,red);
+  background: linear-gradient(to right,red,pink,cyan);
   
 }
 h1{
